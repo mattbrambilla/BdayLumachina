@@ -4,21 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="./style.css" rel="stylesheet" type="text/css">
     <title>Buon compleanno Glori ❤️🎂</title>
 </head>
 <body>
-<div class="container">
-  <div class="balloon">
-    <div><span>☺</span></div>
-    <div><span>B</span></div>
-    <div><span>D</span></div>
-    <div><span>A</span></div>
-    <div><span>Y</span></div>
-    <div><span>!</span></div>
-  </div>
-  <h1>Gloria</h1>
-</div>
+    <div id="birthday-cake">
+        <div class="cake">
+          <div class="middle"></div>
+          <div class="chocs"></div>
+          <div class="top"></div>
+        </div>
+        <div class="candles" onclick="music">
+          <div class="flame"></div>
+          <div class="flame2"></div>
+          <div class="flame3"></div>
+          <div class="text">Buon compleanno Lumachina 🐌!</div>
+          <div class="shadows"></div>
+        </div>
+        <p class="text2">*Clicca sulle candeline per spegnerle</p>
+        </div>
+
+        <audio autoplay>
+            <source src="./happybdaymusic.mp3" type="audio/mpeg" name="music"/>
+          </audio>                   
+    <script>
+        $(document).ready(function() {
+            $(".candles").click(function() {
+                
+              $(".flame").animate({"opacity": 0}, "fast");
+              $(".flame2").animate({"opacity": 0}, "fast");
+              $(".flame3").animate({"opacity": 0}, "fast");
+              $(".text").animate({"top": -90, "opacity": 1}, "fast");
+            });
+        });
+        </script>
+
+
 </body>
 </html>

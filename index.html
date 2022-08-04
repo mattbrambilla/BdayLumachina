@@ -5,38 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
     <link href="./style.css" rel="stylesheet" type="text/css">
     <title>Buon compleanno Glori ❤️🎂</title>
 </head>
 <body>
-    <div id="birthday-cake">
-        <div class="cake">
-          <div class="middle"></div>
-          <div class="chocs"></div>
-          <div class="top"></div>
-        </div>
-        <audio src="./happybdaymusic.mp3" autoplay loop></audio>
-        <div class="candles">
-          <div class="flame"></div>
-          <div class="flame2"></div>
-          <div class="flame3"></div>
-          <div class="text">Buon compleanno Lumachina 🐌!</div>
-          <div class="shadows"></div>
-        </div>
-        <p class="text2">*Clicca sulle candeline per spegnerle</p>
-        </div>
-        
-        <script>
-        $(document).ready(function() {
-            $(".candles").click(function() {
-                
-              $(".flame").animate({"opacity": 0}, "fast");
-              $(".flame2").animate({"opacity": 0}, "fast");
-              $(".flame3").animate({"opacity": 0}, "fast");
-              $(".text").animate({"top": -90, "opacity": 1}, "fast");
-            });
-        });
-        </script>
+  <div id="birthday-cake">
+    <div class="cake">
+      <div class="middle"></div>
+      <div class="chocs"></div>
+      <div class="top"></div>
+    </div>
+    <!-- <audio src="./happybdaymusic.mp3" autoplay loop></audio> -->
+    <div class="candles" onclick="audio.play()">
+      <div class="flame"></div>
+      <div class="flame2"></div>
+      <div class="flame3"></div>
+      <div class="text">Buon compleanno Lumachina 🐌!</div>
+      <div class="shadows"></div>
+    </div>
+    <p class="text2">*Clicca sulle candeline per spegnerle</p>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $(".candles").click(function () {
+
+        $(".flame").animate({ "opacity": 0 }, "fast");
+        $(".flame2").animate({ "opacity": 0 }, "fast");
+        $(".flame3").animate({ "opacity": 0 }, "fast");
+        $(".text").animate({ "top": -90, "opacity": 1 }, "fast");
+      });
+    });
+
+    //Scipt creato per lanicare musica compleanno
+
+    var audio = new Audio("./happybdaymusic.mp3");
+
+    audio.oncanplaythrough = function () {
+      audio.play();
+    }
+
+    audio.loop = true;
+
+    audio.onended = function () {
+      audio.play();
+    }
+
+
+  </script>
 
 
 </body>

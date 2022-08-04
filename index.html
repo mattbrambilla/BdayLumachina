@@ -15,7 +15,8 @@
           <div class="chocs"></div>
           <div class="top"></div>
         </div>
-        <div class="candles" onclick="music">
+        <audio src="./happybdaymusic.mp3" autoplay loop></audio>
+        <div class="candles">
           <div class="flame"></div>
           <div class="flame2"></div>
           <div class="flame3"></div>
@@ -24,11 +25,8 @@
         </div>
         <p class="text2">*Clicca sulle candeline per spegnerle</p>
         </div>
-
-        <audio autoplay>
-            <source src="./happybdaymusic.mp3" type="audio/mpeg" name="music"/>
-          </audio>                   
-    <script>
+        
+        <script>
         $(document).ready(function() {
             $(".candles").click(function() {
                 
